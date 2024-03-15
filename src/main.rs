@@ -13,6 +13,7 @@ fn main() {
         .expect("didn't recieve the write input");
     println!("Hello {},{}", name.trim_end(), greeting);
     math();
+    random_num();
 }
 
 fn math() {
@@ -23,4 +24,10 @@ fn math() {
     println!("15 * 5 = {}", num_1 * num_2);
     println!("15 / 5 = {}", num_1 / num_2);
     println!("15 % 5 = {}", num_1 % num_2);
+}
+
+fn random_num() {
+    let random_num_ = rand::thread_rng().gen_range(1..=100);
+    println!("random: {}", random_num_);
+    println!("random: {random_num_}")
 }
