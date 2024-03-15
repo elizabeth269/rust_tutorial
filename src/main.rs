@@ -14,6 +14,7 @@ fn main() {
     println!("Hello {},{}", name.trim_end(), greeting);
     math();
     random_num();
+    age();
 }
 
 fn math() {
@@ -30,4 +31,16 @@ fn random_num() {
     let random_num_ = rand::thread_rng().gen_range(1..=100);
     println!("random: {}", random_num_);
     println!("random: {random_num_}")
+}
+
+fn age() {
+    let age = 80;
+    println!("what is your Age?");
+    let mut u_age = String::new();
+    io::stdin()
+        .read_line(&mut u_age)
+        .expect("your age is not a number");
+    if u_age < age.to_string() {
+        println!("you are younger than 80!");
+    }
 }
