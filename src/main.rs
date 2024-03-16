@@ -32,15 +32,29 @@ fn random_num() {
     println!("random: {}", random_num_);
     println!("random: {random_num_}")
 }
-
+//dont eat me alive, im just learning.
+//besides, rust can't be the furst language you learn in my opinion
 fn age() {
-    let age = 80;
     println!("what is your Age?");
     let mut u_age = String::new();
     io::stdin()
         .read_line(&mut u_age)
         .expect("your age is not a number");
-    if u_age < age.to_string() {
-        println!("you are younger than 80!");
+    if (u_age >= 1.to_string()) && (u_age <= 17.to_string()) {
+        println!("you are a minor");
+    } else if (u_age > 17.to_string()) && (u_age < 35.to_string()) {
+        println!("you are a young Adult")
+    } else if u_age > 34.to_string() {
+        println!("you are old")
+    } else {
+        println!("bro your age doen't exist")
+    }
+}
+
+fn using_match() {
+    let age = 9;
+    match age {
+        1..=18 => println!("you are important"),
+        65..=i32::MAX => println!("you are valuabel"),
     }
 }
